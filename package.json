@@ -1,0 +1,23 @@
+{
+  "name": "indigenous-futurism",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scene.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/issues"
+  },
+  "homepage": "https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io#readme",
+  "dependencies": {
+    "three": "^0.116.1",
+    "three-orbitcontrols": "^2.110.3"
+  }
+}
