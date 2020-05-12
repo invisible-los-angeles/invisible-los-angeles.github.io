@@ -3,29 +3,15 @@
 //GLTF Loader library
 var GLTFLoader = require('three/examples/js/loaders/GLTFLoader');
 
-//Preloader
-var manager = new THREE.LoadingManager();
-manager.onStart = function() {
-	manager.onLoad = function () {
-
-		$('.start-button').fadeIn('slow');
-
-	};
-};
-
-//3D Model and Texture loaders
-loader = new THREE.GLTFLoader(manager);
-const textureLoader = new THREE.TextureLoader();
-
 //Model Rendering
-loader.load( 'assets/sapling_-01/scene.gltf', function ( gltf ) {
+new THREE.GLTFLoader(manager).load( 'assets/sapling_-01/scene.gltf', function ( gltf ) {
 	var model = gltf.scene;
 	model.traverse ( ( o ) => {
 			 if ( o.isMesh ) {
-				 var textures = ['Bark_Mat_baseColor', 'Bark_Mat_normal', 'leaf_Mat_baseColor','leaf_Mat_normal'];
+				 var textures = ['Bark_Mat_baseColor','leaf_Mat_baseColor'];
          for (x of textures) {
 					 string = 'assets/sapling_-01/textures/'
-					 o.material = new THREE.MeshBasicMaterial({map: textureLoader.load(string.concat(x,'.png'))});
+					 o.material = new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load(string.concat(x,'.png'))});
          }
        }
 	 });

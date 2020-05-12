@@ -29,6 +29,48 @@ ground.receiveshadow = true;
 ground.rotation.x = - Math.PI / 2.0;
 scene.add( ground );
 
+//Accounting for resizing of windows
+window.addEventListener( 'resize', onWindowResize, false );
+
+function onWindowResize(){
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+}
+
+//Preloader
+function preloaderFadeOutInit(){
+$('.preloader').fadeOut('slow');
+$('body').attr('id','');
+}
+
+window.onLoad = function() {
+  $('.start-button').hide();
+};
+
+//Start button function
+$('.start-button').click(function () {
+(function ($) {
+preloaderFadeOutInit();
+})(jQuery);
+});
+
+const manager = new THREE.LoadingManager();
+
+manager.onLoad = function () {
+		$('.loading-div').fadeOut('slow', function () {
+					$('.start-button').fadeIn('slow');
+		});
+};
+
+manager.onProgress = function (itemsLoaded, itemsTotal ) {
+		var percent = (itemsLoaded/itemsTotal * 100).toString();
+		$('.loading').html(percent);
+};
+
 //Animate
 function animate() {
 	requestAnimationFrame( animate );
