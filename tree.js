@@ -1,6 +1,8 @@
+//3D Model and Texture loaders
 loader = new THREE.GLTFLoader();
 const textureLoader = new THREE.TextureLoader();
 
+//Model Rendering
 loader.load( 'assets/sapling_-01/scene.gltf', function ( gltf ) {
 	var model = gltf.scene;
 	model.traverse ( ( o ) => {
