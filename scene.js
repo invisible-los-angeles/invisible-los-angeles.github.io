@@ -1,3 +1,8 @@
+//Required Libraries
+var THREE = require('three');
+var GLTFLoader = require('three/examples/js/loaders/GLTFLoader');
+var OrbitControls = require('three-orbitcontrols');
+
 //Scene
 var scene = new THREE.Scene();
 
