@@ -1,7 +1,20 @@
 // For Natasha to Edit
 
+//GLTF Loader library
+var GLTFLoader = require('three/examples/js/loaders/GLTFLoader');
+
+//Preloader
+var manager = new THREE.LoadingManager();
+manager.onStart = function() {
+	manager.onLoad = function () {
+
+		$('.start-button').fadeIn('slow');
+
+	};
+};
+
 //3D Model and Texture loaders
-loader = new THREE.GLTFLoader();
+loader = new THREE.GLTFLoader(manager);
 const textureLoader = new THREE.TextureLoader();
 
 //Model Rendering

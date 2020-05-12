@@ -1,6 +1,5 @@
 //Required Libraries
 var THREE = require('three');
-var GLTFLoader = require('three/examples/js/loaders/GLTFLoader');
 var OrbitControls = require('three-orbitcontrols');
 
 //Scene
@@ -35,6 +34,7 @@ function animate() {
 	requestAnimationFrame( animate );
 	renderer.render( scene, camera );
 	controls.update();
+
 
 }
 animate();
