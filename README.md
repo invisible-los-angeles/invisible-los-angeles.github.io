@@ -2,7 +2,7 @@
 
 The UCLA Indigenous Futurism Project aims to create a virtual reality simulation of a intersection between time and space to represent the changes that the indigenous Tongva tribe in DTLA has gone through.
 
-##Delegation of Files
+## Directory Breakdown
 * [index.html](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/blob/master/index.html) and [style.css](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/blob/master/style.css): For editing the preloader page html and css (_Qirui_)
 * [scene.js](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/blob/master/scene.js): javascript file for main scene, includes background, camera etc.
 * [assets](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/tree/master/assets): Folder containing media assets, like 3D models and images. Upload assets here!
