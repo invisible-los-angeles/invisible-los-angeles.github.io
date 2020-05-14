@@ -2,6 +2,14 @@
 
 The UCLA Indigenous Futurism Project aims to create a virtual reality simulation of a intersection between time and space to represent the changes that the indigenous Tongva tribe in DTLA has gone through.
 
+##Delegation of Files
+* [index.html](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/blob/master/index.html) and [style.css](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/blob/master/style.css): For editing the preloader page html and css (_Qirui_)
+* [scene.js](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/blob/master/scene.js): javascript file for main scene, includes background, camera etc.
+* [assets](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/tree/master/assets): Folder containing media assets, like 3D models and images. Upload assets here!
+* [tree.js](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/tree/master/tree.js): Javascript file for rendering of tree (_Natasha_)
+* [union_station.js](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/tree/master/union_station.js): Javascript file for rendering union station (_John_)
+
+
 ## Initial Setup
 This is a walkthrough of what you will need to set up in order to begin working on the project collaboratively.
 
@@ -34,16 +42,16 @@ To begin working on the project, you will need to set up Git and Github on your 
 
 Think of Git much like Microsoft Word, where you can edit and save different versions of your word document. GitHub on the other hand is much like Google Drive, where you can upload and download word documents to share with others.
 
-You can set up Git and github on your computer according to the [GitHub's instructions] (https://help.github.com/en/github/getting-started-with-github/set-up-git).
+You can set up Git and github on your computer according to the [GitHub's instructions](https://help.github.com/en/github/getting-started-with-github/set-up-git).
 
 ### Cloning the Project Repository
-The most updated version of the project will be in [the team's GitHub repository] (https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/). A **repository** is a directory or storage space where your projects can live. While a **GitHub repository** is stored on the remote server GitHub, much like a Google Drive folder is only stored in Google Drive, a **local repository** lives in your local computer storage. A GitHub repository is also referred to as a **remote repository** as it is located somewhere other than your local computer.
+The most updated version of the project will be in [the team's GitHub repository](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/). A **repository** is a directory or storage space where your projects can live. While a **GitHub repository** is stored on the remote server GitHub, much like a Google Drive folder is only stored in Google Drive, a **local repository** lives in your local computer storage. A GitHub repository is also referred to as a **remote repository** as it is located somewhere other than your local computer.
 
 To begin working on the project collaboratively, you will need to download the entire project repository so that it also lives us a local repository in your computer. To do this, we will need to clone the project repository. **Cloning a repository** refers to the downloading of a remote GitHub repository into your local computer.
 
-On GitHub, navigate to the main page of the [repository] (https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/). Under the repository name, click **Clone or download**. To clone the repository using HTTPS, under "Clone with HTTPS", click the **copy** icon to copy the link to the repository.
+On GitHub, navigate to the main page of the [repository](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/). Under the repository name, click **Clone or download**. To clone the repository using HTTPS, under "Clone with HTTPS", click the **copy** icon to copy the link to the repository.
 
-Navigate to you CLI. In your CLI, navigate to a file directory that you want the repository to be downloaded to. This is similar to navigating in your 'Folders' directory to the folder of your choice. You may refer to this tutorial on [navigating directories on the Linux CLI] (https://linuxize.com/post/linux-cd-command/) Assuming you want it downloaded in your 'Downloads' folder, you would run the following:
+Navigate to you CLI. In your CLI, navigate to a file directory that you want the repository to be downloaded to. This is similar to navigating in your 'Folders' directory to the folder of your choice. You may refer to this tutorial on [navigating directories on the Linux CLI](https://linuxize.com/post/linux-cd-command/) Assuming you want it downloaded in your 'Downloads' folder, you would run the following:
 ```bash
 cd Downloads
 ```
@@ -129,4 +137,4 @@ git commit -m "Made changes to file"
 
 The `git reset` command is used to undo a commit or staged snapshot.
 
-Once you are confident that the code is working well, you can begin uploading to the remote GitHub repository. This is done with the `git push` command.
+Once you are confident that the code is working well, you can begin uploading to the remote GitHub repository. This is done with the `git push` command. And you're all set!
