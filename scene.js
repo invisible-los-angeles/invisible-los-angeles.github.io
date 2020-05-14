@@ -1,6 +1,5 @@
-//Require js libraries
+//Required Libraries
 var THREE = require('three');
-var GLTFLoader = require('three/examples/js/loaders/GLTFLoader');
 var OrbitControls = require('three-orbitcontrols');
 
 //Scene
@@ -23,18 +22,37 @@ controls.update();
 
 //Ground
 var groundgeometry = new THREE.PlaneBufferGeometry( 100, 100 );
-var groundmat = new THREE.MeshPhongMaterial ( { color: 0xffffff} );
+var groundmat = new THREE.MeshPhongMaterial ( { color: 0x808080} );
 var ground = new THREE.Mesh( groundgeometry, groundmat );
 ground.position.y = 0;
 ground.receiveshadow = true;
 ground.rotation.x = - Math.PI / 2.0;
 scene.add( ground );
 
+//Light
+var ambientlight = new THREE.AmbientLight(0xcccccc,0.9);
+scene.add(ambientlight);
+var pointlight = new THREE.PointLight( 0xffffff, 0.8);
+camera.add(pointlight);
+
+//Accounting for resizing of windows
+window.addEventListener( 'resize', onWindowResize, false );
+
+function onWindowResize(){
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+}
+
 //Animate
 function animate() {
 	requestAnimationFrame( animate );
 	renderer.render( scene, camera );
 	controls.update();
+
 
 }
 animate();
