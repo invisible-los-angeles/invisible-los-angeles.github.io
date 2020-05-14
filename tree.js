@@ -1,11 +1,5 @@
 // For Natasha to Edit
 
-<<<<<<< HEAD
-//GLTF Loader library
-var GLTFLoader = require('three/examples/js/loaders/GLTFLoader');
-
-//Model Rendering
-=======
 //Preloader
 function preloaderFadeOutInit(){
 $('.preloader').fadeOut('slow');
@@ -45,7 +39,6 @@ var onError = function () {};
 var GLTFLoader = require('three/examples/js/loaders/GLTFLoader');
 
 // Model Rendering
->>>>>>> tree
 new THREE.GLTFLoader(manager).load( 'assets/sapling_-01/scene.gltf', function ( gltf ) {
 	var model = gltf.scene;
 	model.traverse ( ( o ) => {
