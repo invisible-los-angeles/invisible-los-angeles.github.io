@@ -22,12 +22,18 @@ controls.update();
 
 //Ground
 var groundgeometry = new THREE.PlaneBufferGeometry( 100, 100 );
-var groundmat = new THREE.MeshPhongMaterial ( { color: 0xffffff} );
+var groundmat = new THREE.MeshPhongMaterial ( { color: 0x808080} );
 var ground = new THREE.Mesh( groundgeometry, groundmat );
 ground.position.y = 0;
 ground.receiveshadow = true;
 ground.rotation.x = - Math.PI / 2.0;
 scene.add( ground );
+
+//Light
+var ambientlight = new THREE.AmbientLight(0xcccccc,0.9);
+scene.add(ambientlight);
+var pointlight = new THREE.PointLight( 0xffffff, 0.8);
+camera.add(pointlight);
 
 //Accounting for resizing of windows
 window.addEventListener( 'resize', onWindowResize, false );
@@ -40,36 +46,6 @@ function onWindowResize(){
     renderer.setSize( window.innerWidth, window.innerHeight );
 
 }
-
-//Preloader
-function preloaderFadeOutInit(){
-$('.preloader').fadeOut('slow');
-$('body').attr('id','');
-}
-
-window.onLoad = function() {
-  $('.start-button').hide();
-};
-
-//Start button function
-$('.start-button').click(function () {
-(function ($) {
-preloaderFadeOutInit();
-})(jQuery);
-});
-
-const manager = new THREE.LoadingManager();
-
-manager.onLoad = function () {
-		$('.loading-div').fadeOut('slow', function () {
-					$('.start-button').fadeIn('slow');
-		});
-};
-
-manager.onProgress = function (itemsLoaded, itemsTotal ) {
-		var percent = (itemsLoaded/itemsTotal * 100).toString();
-		$('.loading').html(percent);
-};
 
 //Animate
 function animate() {

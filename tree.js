@@ -1,9 +1,51 @@
 // For Natasha to Edit
 
+<<<<<<< HEAD
 //GLTF Loader library
 var GLTFLoader = require('three/examples/js/loaders/GLTFLoader');
 
 //Model Rendering
+=======
+//Preloader
+function preloaderFadeOutInit(){
+$('.preloader').fadeOut('slow');
+$('body').attr('id','');
+}
+
+window.onLoad = function() {
+  $('.start-button').hide();
+};
+
+$('.start-button').click(function () {
+(function ($) {
+preloaderFadeOutInit();
+})(jQuery);
+});
+
+//Loading Manager
+var manager = new THREE.LoadingManager();
+
+manager.onLoad = function () {
+		$('.loading-div').fadeOut('slow', function () {
+			$('.start-button').fadeIn('slow');
+		});
+};
+
+// Render model
+var onProgress = function (xhr) {
+	if (xhr.lengthComputable) {
+		var percent = xhr.loaded/xhr.total*100;
+		$('.loading').html(Math.round(percent,2));
+	}
+};
+
+var onError = function () {};
+
+// GLTF Loader library
+var GLTFLoader = require('three/examples/js/loaders/GLTFLoader');
+
+// Model Rendering
+>>>>>>> tree
 new THREE.GLTFLoader(manager).load( 'assets/sapling_-01/scene.gltf', function ( gltf ) {
 	var model = gltf.scene;
 	model.traverse ( ( o ) => {
@@ -15,11 +57,7 @@ new THREE.GLTFLoader(manager).load( 'assets/sapling_-01/scene.gltf', function ( 
          }
        }
 	 });
-
+  model.position.set(-50,0,0);
 	scene.add( model );
 
-}, undefined, function ( error ) {
-
-	console.error( error );
-
-} );
+}, onProgress, onError);
