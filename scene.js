@@ -23,3 +23,43 @@ var ambientlight = new THREE.AmbientLight(0xcccccc,0.9);
 scene.add(ambientlight);
 var pointlight = new THREE.PointLight( 0xffffff, 0.8);
 camera.add(pointlight);
+
+//Renderer
+var renderer = new THREE.WebGLRenderer();
+renderer.setPixelRatio( window.devicePixelRatio );
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
+
+//Orbitcontroller
+var OrbitControls = require('three-orbitcontrols');
+var controls = new OrbitControls( camera, renderer.domElement );
+controls.maxPolarAngle = 0.9 * Math.PI / 2;
+controls.update();
+
+//Accounting for resizing of windows
+window.addEventListener( 'resize', onWindowResize, false );
+
+function onWindowResize() {
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+}
+
+//requestAnimationFrame/
+function animate() {
+	requestAnimationFrame( animate );
+  controls.update();
+  renderer.render( scene, camera );
+}
+
+//mouse hover effect
+var raycaster = new THREE.Raycaster();
+var mouse = new THREE.Vector2();
+
+function updateMouseCoords(event, coordsObj) {
+    coordsObj.x = ((event.clientX - renderer.domElement.offsetLeft + 0.5) / window.innerWidth) * 2 - 1;
+    coordsObj.y = -((event.clientY - renderer.domElement.offsetTop + 0.5) / window.innerHeight) * 2 + 1;
+}
