@@ -51,6 +51,8 @@ new THREE.GLTFLoader(manager).load( 'assets/sapling_-01/scene.gltf', function ( 
        }
 	 });
   model.position.set(-50,0,0);
+  model.castShadow = true;
+  model.receiveShadow = true;
 	scene.add( model );
 
 }, onProgress, onError);
