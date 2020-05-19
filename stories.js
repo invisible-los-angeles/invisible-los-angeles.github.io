@@ -6,6 +6,10 @@ stories = ['story 1', 'story 2', 'story 3']
 //function for creating of story bubbles
 var story_bubbles = [];
 function create_sprite(hue, spritesize, lat, long, story) {
+  var geometry = new THREE.SphereGeometry();
+  var material = new THREE.MeshBasicMaterial( { color: hue } );
+  var light = new THREE.Mesh ( geometry, material );
+
   var spriteMap = new THREE.TextureLoader().load( "assets/glow.png" );
   var spriteMaterial = new THREE.SpriteMaterial(
   {
@@ -17,13 +21,17 @@ function create_sprite(hue, spritesize, lat, long, story) {
   var sprite = new THREE.Sprite( spriteMaterial );
   sprite.scale.set(spritesize, spritesize, spritesize);
 
-  sprite.position.set( lat, 2, long);
+  light.scale.set(spritesize-2, spritesize-2, spritesize-2);
+
+  light.position.set( lat, 2, long);
+  light.add(sprite);
 
   //tooltip
-  sprite.userData.tooltipText = stories[story];
+  light.userData.tooltipText = stories[story];
 
-  story_bubbles.push(sprite)
-  return sprite;
+
+  story_bubbles.push(light)
+  return light;
 }
 
 //tooltip
@@ -88,7 +96,8 @@ for (var i=0; i<stories.length; i++) {
   var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
   var lat = (plusOrMinus * (Math.floor((Math.random() * radius) + 1))) - 50;
   var long = plusOrMinus * (Math.floor((Math.random() * radius) + 1));
-  var story_bubble = create_sprite(0xffa700, 5, lat, long, i);
+  // var story_bubble = create_sprite(0xffa700, 5, lat, long, i);
+  var story_bubble = create_sprite(0xffffff, 5, lat, long, i);
 
   scene.add(story_bubble);
 }
