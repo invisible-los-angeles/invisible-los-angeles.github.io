@@ -1,7 +1,12 @@
 // For Natasha to Edit
 
-//dummy story array
-stories = ['story 1', 'story 2', 'story 3']
+stories = [
+'Toypurina was a renowned and wise Medicine woman of Tongva. As the oppression of Tongva by the Spanish mission worsened and tension continued to rise in 1785, Toypurina was approached by Nicolás José, a key figure in the 1785 rebellion, asking her to convince unbaptized indigenous villagers to join the revote. Toypurina agreed. With her connection, she recruited 6 of the 8 villages which participated in the rebellion. During the attack, Toypurina was captured and later found guilty of leading the attack.',
+
+'A large part of Gabrielino material culture reflected elaborate artisanship. Even everyday items  are decorated with shell, rare minerals, carvings and painting. A lot of such items were made of steatite, including animal carvings, pipes, ritual objects, ornaments and cooking utensils. Steatite was obtained from the Indians of Santa Catalina Islands, where an industry of steatites was established. \n Baskets made with the stem of rushes, grass and squawbush were also widely used in Tongva culture. Flat baskets were used as plates, trays, and winnowers. They also serve the function of storage, serving, trinket-keeping as well as ceremonies. The baskets were hand-weaved by women, with their shape and twining method differ according to their purposes.',
+
+'Tongva Indians regarded marriage as a diplomatic arrangement that strengthened trading and security needs. This contributed to making marriage an economic relationship, which underscored the importance of women in tribal society. \n Gabrielino villages were often located immediately adjacent to non-Gabrielino ones, and intermarriage was common . For example, at Corona, the Gabrielino village of Paxauxa lay directly across Ter Mescal Creek from a large Luiseno village, and intermarriage between the two was common. The people of the Gabrielino village of Tongva intermarried with the people of at least 13 other villages, including Yokuts, Chumash, and Serrano.'
+];
 
 //function for creating of story bubbles
 var story_bubbles = [];
@@ -20,11 +25,8 @@ function create_sprite(hue, spritesize, lat, long, story) {
   });
   var sprite = new THREE.Sprite( spriteMaterial );
   sprite.scale.set(spritesize, spritesize, spritesize);
+  sprite.position.set( lat, 5, long);
 
-  light.scale.set(spritesize-2, spritesize-2, spritesize-2);
-
-  light.position.set( lat, 2, long);
-  light.add(sprite);
 
   //tooltip
   light.userData.tooltipText = stories[story];
