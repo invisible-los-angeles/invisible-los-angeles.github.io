@@ -26,14 +26,18 @@ function create_sprite(hue, spritesize, lat, long, story) {
   var sprite = new THREE.Sprite( spriteMaterial );
   sprite.scale.set(spritesize, spritesize, spritesize);
   sprite.position.set( lat, 5, long);
-
+  //
+  // light.scale.set(spritesize, spritesize, spritesize);
+  //
+  // light.position.set( lat, 5, long);
+  // light.add(sprite);
 
   //tooltip
-  light.userData.tooltipText = stories[story];
+  sprite.userData.tooltipText = stories[story];
 
 
-  story_bubbles.push(light)
-  return light;
+  story_bubbles.push(sprite)
+  return sprite;
 }
 
 //tooltip
@@ -99,7 +103,7 @@ for (var i=0; i<stories.length; i++) {
   var lat = (plusOrMinus * (Math.floor((Math.random() * radius) + 1))) - 50;
   var long = plusOrMinus * (Math.floor((Math.random() * radius) + 1));
   // var story_bubble = create_sprite(0xffa700, 5, lat, long, i);
-  var story_bubble = create_sprite(0xffffff, 5, lat, long, i);
+  var story_bubble = create_sprite(0xffffff, 3, lat, long, i);
 
   scene.add(story_bubble);
 }
