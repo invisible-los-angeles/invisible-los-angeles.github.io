@@ -1,6 +1,6 @@
-# UCLA Indigenous Futurism Project
+# UCLA Invisible Los Angeles Project
 
-The UCLA Indigenous Futurism Project aims to create a virtual reality simulation of a intersection between time and space to represent the changes that the indigenous Tongva tribe in DTLA has gone through.
+The UCLA Invisible Los Angeles Project aims to create a virtual reality simulation of a intersection between time and space to represent the changes that the indigenous Tongva tribe in DTLA has gone through.
 
 ## Directory Breakdown
 * [index.html](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/blob/master/index.html) and [style.css](https://github.com/UCLA-Indigenous-Futurism-Project/UCLA-Indigenous-Futurism-Project.github.io/blob/master/style.css): For editing the preloader page html and css (_Qirui_)
