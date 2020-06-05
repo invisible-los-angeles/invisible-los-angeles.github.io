@@ -1,8 +1,8 @@
 /* For Qirui to Edit */
 body {
   margin: 0;
-  height: 100%;
-  overflow: hidden;
+  /* height: 100%;
+  overflow: hidden; */
  }
 
 canvas { display: block; }
@@ -36,6 +36,7 @@ div#tooltip{
   background: #222222;
   z-index: 1000;
   text-align: center;
+  opacity: 0.7;
 }
 
 .centralize {
@@ -69,6 +70,13 @@ h2 {
   color: white;
   opacity: 0.4;
   display: inline-block;
+}
+
+p {
+  font-family: monospace;
+  color: white;
+  opacity: 0.9;
+  font-size: 11px;
 }
 
 .start-button{
